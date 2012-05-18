@@ -70,6 +70,9 @@ bootstrap:
 	cat bootstrap/js/copyright.js bootstrap/js/bootstrap.min.tmp.js > bootstrap/js/bootstrap.min.js
 	rm bootstrap/js/copyright.js bootstrap/js/bootstrap.min.tmp.js
 
+force: build
+	perl -p -i -e 's/(.*[,{])$$/#force $$1/' docs/assets/css/bootstrap*css
+
 #
 # MAKE FOR GH-PAGES 4 FAT & MDO ONLY (O_O  )
 #
